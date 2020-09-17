@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { HabitListComponent } from './habit-list/habit-list.component'
+import { HabitListComponent } from './habit-list/habit-list.component';
+import { HabitsComponent } from './habits/habits.component'
 
 @NgModule({
   imports:      [ 
@@ -14,11 +15,13 @@ import { HabitListComponent } from './habit-list/habit-list.component'
     RouterModule.forRoot([
       { path: '', component: HabitListComponent },
     ])
-     ],
+  ],
   declarations: [ 
     AppComponent, 
     TopBarComponent, 
-    HabitListComponent ],
+    HabitListComponent, 
+    HabitsComponent
+  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
