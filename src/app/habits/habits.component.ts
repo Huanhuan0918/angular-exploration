@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Habit } from '../habits';
+import { Habit } from '../habit';
+import { HabitList } from '../list-habits';
 
 @Component({
   selector: 'app-habits',
@@ -7,15 +8,17 @@ import { Habit } from '../habits';
   styleUrls: ['./habits.component.css']
 })
 export class HabitsComponent implements OnInit {
-  
-  hero: Habit = {
-    id: 1,
-    name: 'Windstorm'
-  };
+
+  habits = HabitList;
+
+  selectedHabit: Habit;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelect(habit: Habit): void {
+    this.selectedHabit = habit;
+  }
 }

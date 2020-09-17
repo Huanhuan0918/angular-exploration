@@ -5,21 +5,17 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { HabitListComponent } from './habit-list/habit-list.component';
 import { HabitsComponent } from './habits/habits.component'
 
 @NgModule({
   imports:      [ 
     BrowserModule, 
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HabitListComponent },
-    ])
+    RouterModule
   ],
   declarations: [ 
     AppComponent, 
-    TopBarComponent, 
-    HabitListComponent, 
+    TopBarComponent,
     HabitsComponent
   ],
   bootstrap:    [ AppComponent ]
