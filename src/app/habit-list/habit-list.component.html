@@ -1,0 +1,16 @@
+<h2>Habits</h2>
+
+<div style="text-align: center; border: 3px solid green;" *ngFor="let habit of habits">
+
+  <i class="material-icons">{{habit.icon}}</i>
+
+  <h4>
+    <a [title]="habit.name + ' details'">
+    </a>
+    {{habit.name}}
+  </h4>
+
+  <p *ngIf="habit.description">
+    Description: {{ habit.description }}
+  </p>
+</div>
