@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Habit } from '../habit';
-import { HabitList } from '../list-habits';
 import { HabitService } from '../habit.service';
 
 @Component({
@@ -12,7 +11,7 @@ export class HabitsComponent implements OnInit {
 
   habits: Habit[];
 
-  selectedHabit: Habit;
+  // selectedHabit: Habit;
 
   constructor(private habitService: HabitService) {};
 
@@ -20,9 +19,9 @@ export class HabitsComponent implements OnInit {
     this.getHabits();
   }
 
-  onSelect(habit: Habit): void {
-    this.selectedHabit = habit;
-  }
+  // onSelect(habit: Habit): void {
+  //   this.selectedHabit = habit;
+  // }
 
   getHabits(): void{
     this.habitService.getHabits()

@@ -10,7 +10,11 @@ export class HabitService {
 
   constructor() { }
 
-  getHabits(): Observable<Habit[]> {
+  getHabits(): Observable<Habit[]>{
     return of(HabitList);
+  }
+
+  getHabit(id: number): Observable<Habit> {
+    return of(HabitList.find(habit => habit.id === id));
   }
 }
