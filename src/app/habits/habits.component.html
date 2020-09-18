@@ -4,9 +4,13 @@
 
 <ul class="habits">
   <li *ngFor="let habit of habits">
-    <a routerLink="/detail/{{habit.id}}">
-      <span>{{habit.id}}</span>{{habit.name}}
+
+    <i class="material-icons">{{habit.icon}}</i>
+
+    <a routerLink="/detail/{{habit.name}}">
+      <span>{{habit.name}}</span>
     </a>
+
   </li>
 </ul>
 <!-- <app-habit-detail [habit]="selectedHabit"></app-habit-detail> -->

@@ -1,11 +1,13 @@
+
+
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
 
   <div class="form-group">
-    <label for="id">ID</label>
-    <input type="text" class="form-control" id="id"
-            required
-            [(ngModel)]="temp.id" name="id"
-            #name="ngModel">
+    <label for="icon">Icon</label>
+    <li class="list-group-item"  *ngFor="let icon of icons">
+      <input type="radio" [(ngModel)]="temp.icon" name="icon" value="{{icon}}"/> 
+      <i class="material-icons">{{icon}}</i>      
+    </li>
   </div>
 
   <div class="form-group">
@@ -14,6 +16,14 @@
             required
             [(ngModel)]="temp.name" name="name"
             #name="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="description">description</label>
+    <input type="text" class="form-control" id="description"
+            required
+            [(ngModel)]="temp.description" name="description"
+            #description="ngModel">
   </div>
 
   <button type="submit" class="btn btn-default" (click)="addHabit(heroForm)">Add Habit</button>

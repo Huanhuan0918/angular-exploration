@@ -18,7 +18,7 @@ export class HabitService {
     return of(HabitList);
   }
 
-  getHabit(id: number): Observable<Habit> {
-    return of(HabitList.find(habit => habit.id === id));
+  getHabit(name: string): Observable<Habit> {
+    return of(HabitList.find(habit => habit.name === name));
   }
 }

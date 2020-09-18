@@ -24,8 +24,8 @@ export class HabitDetailComponent implements OnInit {
   }
 
   getHabit(): void{
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.habitService.getHabit(id)
+    const name = this.route.snapshot.paramMap.get('name');
+    this.habitService.getHabit(name)
       .subscribe(habit => this.habit = habit);
   }
 

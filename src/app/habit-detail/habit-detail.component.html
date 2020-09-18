@@ -1,9 +1,11 @@
 <div *ngIf="habit">
-  <h2>{{habit.name}} Details</h2>
-  <div><span>Habit ID: </span>{{habit.id}}</div>
+  <i class="material-icons">{{habit.icon}}</i>{{habit.name}}
   <div>
     <label>Habit Name:
       <input [(ngModel)]="habit.name" placeholder="name"/>
+    </label>
+    <label>Habit Description:
+      <input [(ngModel)]="habit.description" placeholder="description"/>
     </label>
   </div>
   <button (click)="goBack()">go back</button>
