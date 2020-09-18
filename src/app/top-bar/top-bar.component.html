@@ -1,5 +1,10 @@
-<a [routerLink]="['/']">
-  <h1>My Habit</h1>
-</a>
-<!-- <a class="button fancy-button">
-</a> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+  <a class="navbar-brand" [routerLink]="['/']">My Habits</a>
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/habit-create">Add Habit</a>
+    </li>
+  </ul>  
+</nav>

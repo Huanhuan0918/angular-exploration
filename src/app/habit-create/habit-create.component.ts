@@ -14,7 +14,13 @@ import { HabitService } from '../habit.service';
 export class HabitCreateComponent implements OnInit{
   
   temp = new Habit( '', '', '');
-  icons = ['pool', 'shopping_cart', 'menu_book'];
+
+  enum_icons = [
+    {name: 'pool'},
+    {name: 'shopping_cart'},
+    {name: 'menu_book'},
+  ]
+
   constructor(
     private route: ActivatedRoute,
     private habitService: HabitService,
@@ -27,8 +33,7 @@ export class HabitCreateComponent implements OnInit{
   }
 
   addHabit(form: any): void {
-    // console.log(form.controls.name.value) ;
-    console.log(form.controls.icon.value) ;
+    //console.log(form.controls.icon.value) ;
     this.habitService.addHabits(
       new Habit(
         form.controls.icon.value, 
