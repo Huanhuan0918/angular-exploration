@@ -1,6 +1,6 @@
 import { Habit } from './habit';
 
-export const HabitList: Habit[] = [
+export var HabitList: Habit[] = [
   { id: 11, name: 'Dr Nice' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },

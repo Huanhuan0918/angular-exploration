@@ -1,4 +1,6 @@
-<h2>My Habits</h2>
+<a routerLink="/habit-create">
+  <i class="material-icons">add_task</i>Add Habit
+</a>
 
 <ul class="habits">
   <li *ngFor="let habit of habits">
@@ -7,5 +9,5 @@
     </a>
   </li>
 </ul>
-<!-- 
-<app-habit-detail [habit]="selectedHabit"></app-habit-detail> -->
+<!-- <app-habit-detail [habit]="selectedHabit"></app-habit-detail> -->
+

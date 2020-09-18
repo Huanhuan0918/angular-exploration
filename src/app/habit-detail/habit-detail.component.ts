@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'
 
 import { Habit } from "../habit";
-import { HabitService } from '../habit.service'
+import { HabitService } from '../habit.service';
 
 @Component({
   selector: "app-habit-detail",

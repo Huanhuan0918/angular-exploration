@@ -10,6 +10,10 @@ export class HabitService {
 
   constructor() { }
 
+  addHabits(habit: Habit){
+    return of(HabitList.push(habit));
+  }
+
   getHabits(): Observable<Habit[]>{
     return of(HabitList);
   }

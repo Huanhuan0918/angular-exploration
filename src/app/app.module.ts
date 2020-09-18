@@ -8,6 +8,7 @@ import { HabitsComponent } from './habits/habits.component';
 import { HabitDetailComponent } from './habit-detail/habit-detail.component'
 
 import { AppRoutingModule } from './app-routing.module';
+import { HabitCreateComponent } from './habit-create/habit-create.component';
 
 @NgModule({
   imports:      [ 
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent, 
     TopBarComponent,
     HabitsComponent,
-    HabitDetailComponent
+    HabitDetailComponent,
+    HabitCreateComponent
   ],
   bootstrap:    [ AppComponent ]
 })
