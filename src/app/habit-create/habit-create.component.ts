@@ -33,7 +33,7 @@ export class HabitCreateComponent implements OnInit{
   }
 
   addHabit(form: any): void {
-    //console.log(form.controls.icon.value) ;
+    console.log(form.controls) ;
     this.habitService.addHabits(
       new Habit(
         form.controls.icon.value, 
