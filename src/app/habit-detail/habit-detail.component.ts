@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'
 
 import { Habit } from "../habit";
-import { HabitService } from '../habit.service'
+import { HabitService } from '../habit.service';
 
 @Component({
   selector: "app-habit-detail",
@@ -24,8 +24,8 @@ export class HabitDetailComponent implements OnInit {
   }
 
   getHabit(): void{
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.habitService.getHabit(id)
+    const name = this.route.snapshot.paramMap.get('name');
+    this.habitService.getHabit(name)
       .subscribe(habit => this.habit = habit);
   }
 

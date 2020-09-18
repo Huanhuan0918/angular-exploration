@@ -1,11 +1,27 @@
-<h2>My Habits</h2>
+<!-- <div class="jumbotron" *ngFor="let habit of habits">
+  <div class="container">
+    <i class="material-icons">{{habit.icon}}</i>
 
-<ul class="habits">
-  <li *ngFor="let habit of habits">
-    <a routerLink="/detail/{{habit.id}}">
-      <span>{{habit.id}}</span>{{habit.name}}
+    <a routerLink="/detail/{{habit.name}}">
+      <span>{{habit.name}}</span>
     </a>
+
+    <p>{{habit.description}}</p>
+
+  </div>
+</div> -->
+
+    
+<ul class="list-group" *ngFor="let habit of habits">
+  <li class="list-group-item list-group-item-action" 
+      routerLink="/detail/{{habit.name}}">
+
+      <h5 class="mb-2 h5">
+        <i class="material-icons">{{habit.icon}}</i>
+        {{habit.name}}
+      </h5>
+      <small>{{habit.description}}</small>
+      
   </li>
 </ul>
-<!-- 
-<app-habit-detail [habit]="selectedHabit"></app-habit-detail> -->
+    

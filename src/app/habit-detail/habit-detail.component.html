@@ -1,10 +1,47 @@
-<div *ngIf="habit">
-  <h2>{{habit.name}} Details</h2>
-  <div><span>Habit ID: </span>{{habit.id}}</div>
+<!-- <div *ngIf="habit">
+  <i class="material-icons">{{habit.icon}}</i>{{habit.name}}
   <div>
     <label>Habit Name:
       <input [(ngModel)]="habit.name" placeholder="name"/>
     </label>
+    <label>Habit Description:
+      <input [(ngModel)]="habit.description" placeholder="description"/>
+    </label>
   </div>
-  <button (click)="goBack()">go back</button>
+  <button >go back</button>
+</div> -->
+
+<div *ngIf="habit">
+  <form #detailForm="ngForm">
+    <div class="form-group">
+      <label for="name">Habit Name</label>
+      <input  type="text" class="form-control" id="name"
+              placeholder="enter habit name"
+              required
+              [(ngModel)]="habit.name" name="name"
+              #name="ngModel">
+      <div [hidden]="name.valid || name.pristine"
+            class="alert alert-danger">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Habit Desciption</label>
+      <input  type="text" class="form-control" id="description" 
+              placeholder="enter habit description"
+              required
+              [(ngModel)]="habit.description" name="description"
+              #description="ngModel"/>
+      <div [hidden]="description.valid || description.pristine"
+           class="alert alert-danger">
+        Desciption is required
+      </div>
+    </div>
+
+    <button class="btn btn-primary"
+            [disabled]="!detailForm.form.valid" 
+            (click)="goBack()">Submit</button>
+
+  </form>
 </div>

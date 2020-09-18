@@ -1,0 +1,52 @@
+
+<form #habitForm="ngForm">
+
+<div class="btn-group" >
+  <div class="m-2" *ngFor="let enum of enum_icons">
+    <button class="btn btn-outline-secondary"
+            [value]='enum.name'
+            onclick="console.log(this.value);">
+      <input type="radio" class="form-check-input" id="{{enum.name}}" 
+            [(ngModel)]="temp.icon" name="icon"
+            #name='ngModel'/>
+      <i class="material-icons">{{enum.name}}</i>
+    </button>
+  </div>
+</div>
+
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Name</span>
+    </div>
+      <input  type="text" class="form-control" id="name"
+              placeholder="enter habit name"
+              required
+              [(ngModel)]="temp.name" name="name"
+              #name="ngModel"/>
+      <div [hidden]="name.valid || name.pristine"
+            class="alert alert-danger">
+        Please provide a name.
+      </div>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Description</span>
+    </div>
+    <input  type="text" class="form-control" id="description"
+              required
+              [(ngModel)]="temp.description" name="description"
+              #description="ngModel"/>
+    <div [hidden]="description.valid || description.pristine"
+          class="alert alert-danger">
+      Please provide the description.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-success" 
+          [disabled]="!habitForm.form.valid" 
+          (click)="addHabit(habitForm)">Submit</button>
+
+</form>
+
