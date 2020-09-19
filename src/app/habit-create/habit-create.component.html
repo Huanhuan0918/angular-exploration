@@ -1,36 +1,40 @@
+<!-- Similar to habit-detail.component.html -->
 
 <form #habitForm="ngForm">
+    <!-- Using radio button for icon selection -->
+    <div class="input-group">
+          <span class="input-group-text ml-3 mt-3">Icon</span>
+      <div class="form-inline">
+        <div class="form-group col-sm-6">
+          <!-- ngFor to trivers icon list-->  
+          <div class="form-control mt-2 " *ngFor="let icon of enum_icons">
+            <input type="radio" value="{{icon.name}}"
+                  [(ngModel)]="icon.name" name="icon"
+                  #name='ngModel'>
+            <i class="material-icons">{{icon.name}}</i>
+          </div>
+          <!-- <div *ngIf="name.errors?.required">Please select an icon.</div> -->
+        </div>
+      </div>
+    </div>
 
-<div class="btn-group" >
-  <div class="m-2" *ngFor="let enum of enum_icons">
-    <button class="btn btn-outline-secondary"
-            [value]='enum.name'
-            onclick="console.log(this.value);">
-      <input type="radio" class="form-check-input" id="{{enum.name}}" 
-            [(ngModel)]="temp.icon" name="icon"
-            #name='ngModel'/>
-      <i class="material-icons">{{enum.name}}</i>
-    </button>
-  </div>
-</div>
-
-
-  <div class="input-group mb-3">
+  <div class="input-group col-sm-6 mt-2">
     <div class="input-group-prepend">
         <span class="input-group-text">Name</span>
     </div>
-      <input  type="text" class="form-control" id="name"
+    <input  type="text" class="form-control" id="name"
               placeholder="enter habit name"
               required
               [(ngModel)]="temp.name" name="name"
               #name="ngModel"/>
+      <div class="w-100"></div>
       <div [hidden]="name.valid || name.pristine"
-            class="alert alert-danger">
+            class="mt-1 alert alert-danger">
         Please provide a name.
       </div>
   </div>
 
-  <div class="input-group mb-3">
+  <div class="input-group col-sm-6 mt-2">
     <div class="input-group-prepend">
       <span class="input-group-text">Description</span>
     </div>
@@ -38,13 +42,14 @@
               required
               [(ngModel)]="temp.description" name="description"
               #description="ngModel"/>
+    <div class="w-100"></div>
     <div [hidden]="description.valid || description.pristine"
-          class="alert alert-danger">
+          class="mt-1 alert alert-danger">
       Please provide the description.
     </div>
   </div>
 
-  <button type="submit" class="btn btn-success" 
+  <button type="submit" class="btn btn-success ml-3 mt-2" 
           [disabled]="!habitForm.form.valid" 
           (click)="addHabit(habitForm)">Submit</button>
 

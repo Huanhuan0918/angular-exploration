@@ -1,47 +1,70 @@
-<!-- <div *ngIf="habit">
-  <i class="material-icons">{{habit.icon}}</i>{{habit.name}}
-  <div>
-    <label>Habit Name:
-      <input [(ngModel)]="habit.name" placeholder="name"/>
-    </label>
-    <label>Habit Description:
-      <input [(ngModel)]="habit.description" placeholder="description"/>
-    </label>
-  </div>
-  <button >go back</button>
-</div> -->
+<!-- Basic form tutorial link from angular: https://angular.io/guide/forms -->
+<!--
+Template-driven forms rely on directives defined in the FormsModule.
 
-<div *ngIf="habit">
-  <form #detailForm="ngForm">
-    <div class="form-group">
-      <label for="name">Habit Name</label>
-      <input  type="text" class="form-control" id="name"
+NgModel = value changes in the attached form element with changes in the data model
+          respond to user input with input validation and error handling
+
+NgForm =  creates a top-level FormGroup instance and binds it to a <form> element
+          track aggregated form value and validation status. 
+-->
+
+<form #habitForm="ngForm">
+    <!-- Using radio button for icon selection -->
+    <div class="input-group">
+          <span class="input-group-text ml-3 mt-3">Icon</span>
+      <div class="form-inline">
+        <div class="form-group col-sm-6">
+          <!-- ngFor to trivers icon list-->  
+          <div class="form-control mt-2 " *ngFor="let icon of enum_icons">
+            <input type="radio" value="{{icon.name}}"
+                  required
+                  [(ngModel)]="icon.name" name="icon"
+                  #name='ngModel'>
+            <i class="material-icons">{{icon.name}}</i>
+          </div>
+          <!-- (?): validation for radio button-->
+          <!-- <div *ngIf="name.errors?.required">Please select an icon.</div> -->
+        </div>
+      </div>
+    </div>
+
+  <div class="input-group col-sm-6 mt-2">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Name</span>
+    </div>
+    <input  type="text" class="form-control" id="name"
               placeholder="enter habit name"
               required
               [(ngModel)]="habit.name" name="name"
-              #name="ngModel">
+              #name="ngModel"/>
+      <!-- Input validation for null input-->
+      <!-- Force next columns to break to new line at md breakpoint and up -->
+      <div class="w-100"></div>
       <div [hidden]="name.valid || name.pristine"
-            class="alert alert-danger">
-        Name is required
+            class="mt-1 alert alert-danger">
+        Please provide a name.
       </div>
-    </div>
+  </div>
 
-    <div class="form-group">
-      <label>Habit Desciption</label>
-      <input  type="text" class="form-control" id="description" 
-              placeholder="enter habit description"
+  <div class="input-group col-sm-6 mt-2">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Description</span>
+    </div>
+    <input  type="text" class="form-control" id="description"
               required
               [(ngModel)]="habit.description" name="description"
               #description="ngModel"/>
-      <div [hidden]="description.valid || description.pristine"
-           class="alert alert-danger">
-        Desciption is required
-      </div>
+    <div class="w-100"></div>
+    <div [hidden]="description.valid || description.pristine"
+          class="mt-1 alert alert-danger">
+      Please provide the description.
     </div>
+  </div>
 
-    <button class="btn btn-primary"
-            [disabled]="!detailForm.form.valid" 
-            (click)="goBack()">Submit</button>
+  <button type="submit" class="btn btn-success ml-3 mt-2" 
+          [disabled]="!habitForm.form.valid" 
+          (click)="goBack(habitForm)">Submit</button>
 
-  </form>
-</div>
+</form>
+
