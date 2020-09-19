@@ -1,3 +1,4 @@
+// Predifined Habit List
 import { Habit } from './habit';
 
 export var HabitList: Habit[] = [

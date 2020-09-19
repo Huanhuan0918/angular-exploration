@@ -1,6 +1,8 @@
 <app-top-bar></app-top-bar>
 <!-- <router-outlet></router-outlet> -->
 
+<!-- The <router-outlet> container has an attribute directive that contains data about active routes and their states -->
+<!-- Pass outlet directive to .ts through #outlet="outlet" -->
 <div [@routeAnimation]="getAnimationData(routerOutlet)">
   <router-outlet #routerOutlet="outlet"></router-outlet>
 </div>

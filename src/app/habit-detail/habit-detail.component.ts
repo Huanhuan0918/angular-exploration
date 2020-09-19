@@ -9,7 +9,7 @@ import { HabitService } from '../habit.service';
 @Component({
   selector: "app-habit-detail",
   templateUrl: "./habit-detail.component.html",
-  styleUrls: ["./habit-detail.component.css"]
+  styleUrls: ["./habit-detail.component.css"],
 })
 export class HabitDetailComponent implements OnInit {
   habit: Habit;
@@ -32,7 +32,7 @@ export class HabitDetailComponent implements OnInit {
   }
 
   goBack(form: any): void {
-    console.log(form.controls);
+    // console.log(form.controls);
     this.habitService.changeHabit(
       new Habit(
         form.controls.icon.value, 

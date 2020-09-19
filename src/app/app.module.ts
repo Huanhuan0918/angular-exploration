@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -10,12 +11,15 @@ import { HabitDetailComponent } from './habit-detail/habit-detail.component'
 
 import { AppRoutingModule } from './app-routing.module';
 import { HabitCreateComponent } from './habit-create/habit-create.component';
+
+
 @NgModule({
   imports:      [ 
     BrowserModule, 
     FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   declarations: [ 
     AppComponent, 
@@ -26,4 +30,6 @@ import { HabitCreateComponent } from './habit-create/habit-create.component';
   ],
   bootstrap:    [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+
+ }

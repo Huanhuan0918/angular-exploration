@@ -36,6 +36,8 @@ export class HabitCreateComponent implements OnInit{
   onSubmit() {
   }
 
+  // Obain data from form, create a new habit
+  // and push to the habit list
   addHabit(form: any): void {
     // console.log(form.controls) ;
     this.habitService.addHabits(

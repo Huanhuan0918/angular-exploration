@@ -1,3 +1,5 @@
+// Predifined icon list. Contains the string of name.
+// All icons are from material-icons
 export const EnumIcon = [
   {name: 'pool'},
   {name: 'shopping_cart'},

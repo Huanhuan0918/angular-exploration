@@ -1,8 +1,9 @@
+// Animation settings are directly from angular tutorial "Route transition animations"
+// Link: https://angular.io/guide/route-animations
 import {
   trigger, animateChild, group,
   transition, animate, style, query
 } from '@angular/animations';
-
 
 // Routable animations
 export const slideInAnimation =
