@@ -1,2 +1,6 @@
 <app-top-bar></app-top-bar>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
