@@ -10,4 +10,13 @@ export var HabitList: Habit[] = [
   { icon: 'fitness_center', 
     name: 'Workout', 
     description : 'Stay healthy!' },
+  { icon: 'local_mall',
+    name: 'It is shopping time!',
+    description: 'Be careful about the budget.'},
+  { icon: 'menu_book',
+    name: 'Read Book',
+    description: 'Just read it.'},
+  { icon: 'local_dining',
+    name: 'Dine Out',
+    description: 'Enjoy a good meal with people you love.'},
 ];

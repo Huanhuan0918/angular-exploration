@@ -12,7 +12,7 @@
 </div> -->
 
     
-<ul class="list-group m-2" *ngFor="let habit of habits">
+<!-- <ul class="list-group m-2" *ngFor="let habit of habits">
   <li class="list-group-item list-group-item-action" 
       routerLink="/detail/{{habit.name}}">
 
@@ -23,5 +23,17 @@
       <small>{{habit.description}}</small>
       
   </li>
-</ul>
+</ul> -->
+
+<div class="card m-2"  routerLink="/detail/{{habit.name}}" *ngFor="let habit of habits">
+  <div class="card-header">
+    <span class="badge badge-dark">
+      <i class="material-icons">{{habit.icon}}</i>
+    </span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{habit.name}}</h5>
+    <p class="card-text">{{habit.description}}</p>
+  </div>
+</div>
     

@@ -21,4 +21,8 @@ export class HabitService {
   getHabit(name: string): Observable<Habit> {
     return of(HabitList.find(habit => habit.name === name));
   }
+
+  changeHabit(h: Habit) {
+    HabitList[HabitList.findIndex(habit => habit.name == h.name)] = h;
+  }
 }

@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'
 
 import { Habit } from "../habit";
+import { EnumIcon } from "../icon";
 import { HabitService } from '../habit.service';
 
 
@@ -14,12 +15,15 @@ import { HabitService } from '../habit.service';
 export class HabitCreateComponent implements OnInit{
   
   temp = new Habit( '', '', '');
-
-  enum_icons = [
-    {name: 'pool'},
-    {name: 'shopping_cart'},
-    {name: 'menu_book'},
-  ]
+  enum_icons = EnumIcon;
+  // enum_icons = [
+  //   {name: 'pool'},
+  //   {name: 'shopping_cart'},
+  //   {name: 'menu_book'},
+  //   {name: 'pets'},
+  //   {name: 'movie'},
+  //   {name: 'local_dining'}
+  // ]
 
   constructor(
     private route: ActivatedRoute,
@@ -33,7 +37,7 @@ export class HabitCreateComponent implements OnInit{
   }
 
   addHabit(form: any): void {
-    console.log(form.controls) ;
+    // console.log(form.controls) ;
     this.habitService.addHabits(
       new Habit(
         form.controls.icon.value, 
