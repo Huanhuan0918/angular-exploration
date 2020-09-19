@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: '', component: HabitsComponent, pathMatch: 'full' },
   { path: 'habit-create', component: HabitCreateComponent },
   { path: 'detail/:name', component: HabitDetailComponent }
-
 ];
 
 @NgModule({
