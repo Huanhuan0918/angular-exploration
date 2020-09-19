@@ -10,9 +10,6 @@ import { HabitDetailComponent } from './habit-detail/habit-detail.component'
 
 import { AppRoutingModule } from './app-routing.module';
 import { HabitCreateComponent } from './habit-create/habit-create.component';
-import { PopupComponent } from './popup/popup.component';
-import { PopupService } from './popup.service';
-
 @NgModule({
   imports:      [ 
     BrowserModule, 
@@ -20,14 +17,12 @@ import { PopupService } from './popup.service';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [PopupService],
   declarations: [ 
     AppComponent, 
     TopBarComponent,
     HabitsComponent,
     HabitDetailComponent,
-    HabitCreateComponent,
-    PopupComponent
+    HabitCreateComponent
   ],
   bootstrap:    [ AppComponent ]
 })
