@@ -5,7 +5,9 @@ import { PopupComponent } from './popup/popup.component';
 
 @Component({
   selector: "my-app",
-  templateUrl: "./app.component.html",
+  template: `<input #input value="Message">
+<button (click)="popup.showAsComponent(input.value)">Show as component</button>`,
+  // templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
 

@@ -22,6 +22,7 @@ export class PopupService {
     this.applicationRef.attachView(popupComponentRef.hostView);
 
     // Listen to the close event
+    // Failed to remove the pop up window, always created a new one
     popupComponentRef.instance.closed.subscribe(() => {
       document.body.removeChild(popup);
       this.applicationRef.detachView(popupComponentRef.hostView);
@@ -33,21 +34,6 @@ export class PopupService {
     // Add to the DOM
     document.body.appendChild(popup);
   }
-
-  // // This uses the new custom-element method to add the popup to the DOM.
-  // showAsElement(message: string) {
-  //   // Create element
-  //   const popupEl: NgElement & WithProperties<PopupComponent> = document.createElement('popup-element') as any;
-
-  //   // Listen to the close event
-  //   popupEl.addEventListener('closed', () => document.body.removeChild(popupEl));
-
-  //   // Set the message
-  //   popupEl.message = message;
-
-  //   // Add to the DOM
-  //   document.body.appendChild(popupEl);
-  // }
 }
 
 
