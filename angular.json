@@ -56,7 +56,10 @@
             "production": {
               "browserTarget": "demo:build:production"
             }
-          }
+          },
+          "staging":{
+            "browserTarget": "demo:build:staging"
+          }  
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -96,5 +99,8 @@
       }
     }
   },
-  "defaultProject": "demo"
+  "defaultProject": "demo",
+  "cli": {
+    "analytics": "08608e59-01f0-4b8d-81db-94d4ee1ce668"
+  }
 }
